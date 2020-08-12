@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Questions View Controller-->
+        <scene sceneID="lh1-LD-VYs">
+            <objects>
+                <viewController storyboardIdentifier="Questions" id="d2Y-9A-64B" customClass="QuestionsViewController" customModule="QuizApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LcJ-4X-YEx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xaj-c4-ag6">
+                                <rect key="frame" x="10" y="74" width="355" height="294.66666666666669"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qzD-NG-OpR">
+                                <rect key="frame" x="10" y="368.66666666666669" width="355" height="243.66666666666669"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuestionChoiceCell" id="FFO-Ev-5Mw">
+                                        <rect key="frame" x="0.0" y="28" width="355" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FFO-Ev-5Mw" id="FhV-G4-1nN">
+                                            <rect key="frame" x="0.0" y="0.0" width="355" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="d2Y-9A-64B" id="Bqc-OH-bYW"/>
+                                    <outlet property="delegate" destination="d2Y-9A-64B" id="BKx-Lv-zu6"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PBZ-Pw-3XG">
+                                <rect key="frame" x="172.66666666666666" y="728" width="30" height="30"/>
+                                <connections>
+                                    <action selector="submitAction:" destination="d2Y-9A-64B" eventType="touchUpInside" id="1mR-7J-ygt"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ZS-Vq-YxZ">
+                                <rect key="frame" x="10" y="622.33333333333337" width="355" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="PBZ-Pw-3XG" firstAttribute="centerX" secondItem="Bbh-bb-Ex1" secondAttribute="centerX" id="HDW-r3-4y9"/>
+                            <constraint firstItem="Xaj-c4-ag6" firstAttribute="height" secondItem="LcJ-4X-YEx" secondAttribute="height" multiplier="0.4" constant="-30" id="OuI-Se-Ioy"/>
+                            <constraint firstItem="qzD-NG-OpR" firstAttribute="leading" secondItem="Bbh-bb-Ex1" secondAttribute="leading" constant="10" id="aXX-OS-x92"/>
+                            <constraint firstItem="Xaj-c4-ag6" firstAttribute="top" secondItem="Bbh-bb-Ex1" secondAttribute="top" constant="30" id="c6I-MN-F2I"/>
+                            <constraint firstItem="Bbh-bb-Ex1" firstAttribute="trailing" secondItem="Xaj-c4-ag6" secondAttribute="trailing" constant="10" id="cXX-Wj-BDd"/>
+                            <constraint firstItem="8ZS-Vq-YxZ" firstAttribute="leading" secondItem="Bbh-bb-Ex1" secondAttribute="leading" constant="10" id="diP-ZW-21z"/>
+                            <constraint firstItem="qzD-NG-OpR" firstAttribute="height" secondItem="LcJ-4X-YEx" secondAttribute="height" multiplier="0.3" id="f26-YF-KO5"/>
+                            <constraint firstItem="8ZS-Vq-YxZ" firstAttribute="top" secondItem="qzD-NG-OpR" secondAttribute="bottom" constant="10" id="hDw-M4-hY4"/>
+                            <constraint firstItem="qzD-NG-OpR" firstAttribute="top" secondItem="Xaj-c4-ag6" secondAttribute="bottom" id="jOh-GZ-BoD"/>
+                            <constraint firstItem="Xaj-c4-ag6" firstAttribute="leading" secondItem="Bbh-bb-Ex1" secondAttribute="leading" constant="10" id="r4i-sr-5DQ"/>
+                            <constraint firstItem="Bbh-bb-Ex1" firstAttribute="bottom" secondItem="PBZ-Pw-3XG" secondAttribute="bottom" constant="20" id="vlR-Ju-LDl"/>
+                            <constraint firstItem="Bbh-bb-Ex1" firstAttribute="trailing" secondItem="8ZS-Vq-YxZ" secondAttribute="trailing" constant="10" id="wXD-tM-5Il"/>
+                            <constraint firstItem="Bbh-bb-Ex1" firstAttribute="trailing" secondItem="qzD-NG-OpR" secondAttribute="trailing" constant="10" id="xo4-Rd-Zyo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Bbh-bb-Ex1"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnSubmit" destination="PBZ-Pw-3XG" id="GWA-Fs-X3x"/>
+                        <outlet property="lblCorrectAnswer" destination="8ZS-Vq-YxZ" id="n4s-QS-mxB"/>
+                        <outlet property="lblQuestions" destination="Xaj-c4-ag6" id="oqL-BO-35l"/>
+                        <outlet property="tblViewChoices" destination="qzD-NG-OpR" id="IDR-gl-Fh2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f0H-j1-acw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-30" y="39"/>
+        </scene>
+    </scenes>
+</document>
